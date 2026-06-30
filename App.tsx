@@ -1,34 +1,32 @@
 import { QueryClientProvider } from '@tanstack/react-query';
 import { StatusBar } from 'expo-status-bar';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { queryClient } from '@/lib';
 import { useTheme } from '@/hooks';
+import { RootNavigator } from '@/navigation';
 
 function AppContent() {
-  const { colors, isDarkMode, toggleTheme } = useTheme();
+  const { isDarkMode } = useTheme();
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
-      <Text style={[styles.title, { color: colors.text }]}>AITV+ Setup Working</Text>
-
-      <Pressable onPress={toggleTheme} style={[styles.button, { backgroundColor: colors.primary }]}>
-        <Text style={styles.buttonText}>Switch to {isDarkMode ? 'Light' : 'Dark'} Mode</Text>
-      </Pressable>
-
+    <>
+      <RootNavigator />
       <StatusBar style={isDarkMode ? 'light' : 'dark'} />
-    </View>
+    </>
   );
 }
 
 export default function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <AppContent />
-    </QueryClientProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <QueryClientProvider client={queryClient}>
+        <AppContent />
+      </QueryClientProvider>
+    </GestureHandlerRootView>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
