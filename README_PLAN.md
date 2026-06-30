@@ -25,17 +25,18 @@
 
 ---
 
-## ⏳ Phase 2 — Design System
+## ✅ Phase 2 — Theme & State Management
 
-- [ ] Color system
-- [ ] Typography
-- [ ] Spacing
-- [ ] Radius
-- [ ] Shadows
-- [ ] Reusable Button
-- [ ] Screen Container
-- [ ] Header
-- [ ] Card Components
+- [x] Theme colors
+- [x] Typography
+- [x] Spacing
+- [x] Radius
+- [x] Shadows
+- [x] Theme hook
+- [x] Zustand theme store
+- [x] Dark / Light mode
+- [x] React Query setup
+- [x] Query Client
 
 ---
 
