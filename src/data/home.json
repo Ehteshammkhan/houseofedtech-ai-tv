@@ -1,0 +1,133 @@
+{
+  "hero": {
+    "id": "hero-1",
+    "title": "Master AI Productivity",
+    "subtitle": "Featured learning path",
+    "description": "A cinematic learning experience designed for professionals who want to use AI tools in real workflows.",
+    "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=900",
+    "backdrop": "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1600",
+    "type": "course",
+    "duration": "4h 20m",
+    "rating": "4.9",
+    "year": "2026",
+    "tags": ["AI", "Productivity", "Career"],
+    "progress": 0.42
+  },
+  "sections": [
+    {
+      "id": "continue",
+      "title": "Continue Watching",
+      "subtitle": "Pick up where you left off",
+      "items": [
+        {
+          "id": "cw-1",
+          "title": "Prompt Engineering Basics",
+          "subtitle": "Lesson 04",
+          "description": "Learn how to structure prompts for reliable output.",
+          "thumbnail": "https://images.unsplash.com/photo-1676299081847-824916de030a?q=80&w=900",
+          "backdrop": "https://images.unsplash.com/photo-1676299081847-824916de030a?q=80&w=1600",
+          "type": "course",
+          "duration": "18m",
+          "rating": "4.8",
+          "year": "2026",
+          "tags": ["AI", "Prompting"],
+          "progress": 0.68
+        },
+        {
+          "id": "cw-2",
+          "title": "Automate Reports with AI",
+          "subtitle": "Lesson 02",
+          "description": "Create repeatable reporting workflows using modern AI tools.",
+          "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=900",
+          "backdrop": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600",
+          "type": "course",
+          "duration": "22m",
+          "rating": "4.7",
+          "year": "2026",
+          "tags": ["Automation", "Workflows"],
+          "progress": 0.35
+        }
+      ]
+    },
+    {
+      "id": "trending",
+      "title": "Trending Now",
+      "subtitle": "Most watched this week",
+      "items": [
+        {
+          "id": "tr-1",
+          "title": "AI for Founders",
+          "subtitle": "Startup playbook",
+          "description": "Use AI to validate ideas, build MVPs, and scale operations faster.",
+          "thumbnail": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=900",
+          "backdrop": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=1600",
+          "type": "series",
+          "duration": "6 Episodes",
+          "rating": "4.9",
+          "year": "2026",
+          "tags": ["Startup", "AI", "Business"]
+        },
+        {
+          "id": "tr-2",
+          "title": "Data Analytics Fast Track",
+          "subtitle": "Career upgrade",
+          "description": "A practical path to dashboards, metrics, and business decision-making.",
+          "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=900",
+          "backdrop": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600",
+          "type": "course",
+          "duration": "8h",
+          "rating": "4.8",
+          "year": "2026",
+          "tags": ["Data", "Analytics", "Power BI"]
+        },
+        {
+          "id": "tr-3",
+          "title": "Live AI Workshop",
+          "subtitle": "Starts today",
+          "description": "Join a practical live session with real-world AI workflows.",
+          "thumbnail": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=900",
+          "backdrop": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1600",
+          "type": "live",
+          "duration": "Live",
+          "rating": "4.9",
+          "year": "2026",
+          "tags": ["Live", "Workshop"],
+          "isLive": true
+        }
+      ]
+    },
+    {
+      "id": "recommended",
+      "title": "Recommended For You",
+      "subtitle": "Based on your interests",
+      "items": [
+        {
+          "id": "rec-1",
+          "title": "Excel to AI Dashboards",
+          "subtitle": "Office productivity",
+          "description": "Move from manual sheets to intelligent dashboards.",
+          "thumbnail": "https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=900",
+          "backdrop": "https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=1600",
+          "type": "course",
+          "duration": "3h 40m",
+          "rating": "4.6",
+          "year": "2026",
+          "tags": ["Excel", "AI", "Dashboard"]
+        },
+        {
+          "id": "rec-2",
+          "title": "Career Growth with AI",
+          "subtitle": "Professional skills",
+          "description": "Learn how to use AI to improve output, speed, and decision making.",
+          "thumbnail": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=900",
+          "backdrop": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600",
+          "type": "series",
+          "duration": "5 Episodes",
+          "rating": "4.7",
+          "year": "2026",
+          "tags": ["Career", "AI"]
+        }
+      ]
+    }
+  ]
+}

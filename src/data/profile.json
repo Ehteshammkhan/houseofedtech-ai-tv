@@ -1,0 +1,36 @@
+{
+  "id": "user-1",
+  "name": "Rayyan Khan",
+  "email": "rayyan@example.com",
+  "plan": "Pro Learner",
+  "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=500",
+  "learningHours": 48,
+  "completedCourses": 12,
+  "streakDays": 8,
+  "menu": [
+    {
+      "id": "downloads",
+      "title": "Downloads",
+      "subtitle": "Saved lessons for offline access",
+      "icon": "download"
+    },
+    {
+      "id": "notifications",
+      "title": "Notifications",
+      "subtitle": "Learning reminders and live alerts",
+      "icon": "bell"
+    },
+    {
+      "id": "appearance",
+      "title": "Appearance",
+      "subtitle": "Switch between light and dark mode",
+      "icon": "theme-light-dark"
+    },
+    {
+      "id": "support",
+      "title": "Help & Support",
+      "subtitle": "FAQs, contact, and product feedback",
+      "icon": "help-circle"
+    }
+  ]
+}
