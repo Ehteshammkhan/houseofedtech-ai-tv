@@ -16,7 +16,10 @@ type HeroCardProps = {
 
 function HeroCardComponent({ item, onPress }: HeroCardProps) {
   return (
-    <Pressable onPress={() => onPress?.(item)} style={styles.container}>
+    <Pressable
+      onPress={() => onPress?.(item)}
+      style={({ pressed }) => [styles.container, { opacity: pressed ? 0.9 : 1 }]}
+    >
       <Image
         source={{ uri: item.backdrop }}
         style={StyleSheet.absoluteFill}

@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
   },
   top: {
     padding: spacing.lg,
+    paddingTop: spacing['4xl'],
   },
   backButton: {
     width: 44,

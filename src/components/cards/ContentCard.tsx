@@ -28,6 +28,7 @@ function ContentCardComponent({ item, onPress }: ContentCardProps) {
           contentFit="cover"
           transition={250}
         />
+
         {item.isLive ? (
           <View style={styles.badge}>
             <Badge label="LIVE" tone="live" />
@@ -38,6 +39,7 @@ function ContentCardComponent({ item, onPress }: ContentCardProps) {
       <AppText variant="bodyMedium" numberOfLines={1} style={styles.title}>
         {item.title}
       </AppText>
+
       <AppText variant="caption" color={colors.textMuted} numberOfLines={1}>
         {item.subtitle}
       </AppText>
