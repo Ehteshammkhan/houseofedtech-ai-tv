@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
   header: {
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.lg,
-    paddingTop: spacing['4xl'],
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',

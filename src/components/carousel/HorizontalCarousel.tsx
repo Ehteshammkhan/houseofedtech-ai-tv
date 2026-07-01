@@ -27,7 +27,6 @@ function HorizontalCarouselComponent({ section, onPressItem }: HorizontalCarouse
         horizontal
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
-        estimatedItemSize={166}
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.listContent}
       />

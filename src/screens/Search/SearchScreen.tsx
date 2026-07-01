@@ -103,7 +103,6 @@ export function SearchScreen() {
 const styles = StyleSheet.create({
   content: {
     padding: spacing.lg,
-    paddingTop: spacing['4xl'],
     paddingBottom: spacing['4xl'],
   },
   header: {

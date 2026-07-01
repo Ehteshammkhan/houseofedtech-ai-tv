@@ -7,6 +7,8 @@ import { useTheme } from '@/hooks';
 import { radius, spacing } from '@/theme';
 import type { UserProfile } from '@/types';
 
+const avatarPlaceholder = require('../../../../assets/images/avatar-placeholder.png');
+
 type Props = {
   profile: UserProfile;
 };
@@ -14,9 +16,12 @@ type Props = {
 export function ProfileHeader({ profile }: Props) {
   const { colors } = useTheme();
 
+  const avatarSource =
+    profile.avatar === 'avatar-placeholder' ? avatarPlaceholder : { uri: profile.avatar };
+
   return (
     <View style={styles.header}>
-      <Image source={{ uri: profile.avatar }} style={styles.avatar} contentFit="cover" />
+      <Image source={avatarSource} style={styles.avatar} contentFit="cover" />
 
       <View style={styles.info}>
         <AppText variant="h2">{profile.name}</AppText>
@@ -27,6 +32,7 @@ export function ProfileHeader({ profile }: Props) {
 
         <View style={[styles.planBadge, { backgroundColor: colors.primary }]}>
           <MaterialCommunityIcons name="star" size={14} color="#FFFFFF" />
+
           <AppText variant="caption" color="#FFFFFF">
             {profile.plan}
           </AppText>
@@ -42,7 +48,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: spacing.lg,
     marginBottom: spacing['2xl'],
-    paddingTop: spacing['4xl'],
   },
   avatar: {
     width: 82,
