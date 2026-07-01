@@ -1,3 +1,4 @@
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { StyleSheet, Switch, View } from 'react-native';
 
 import { AppText } from '@/components';
@@ -16,7 +17,7 @@ export function MenuItem({ item }: Props) {
   return (
     <View style={[styles.item, { borderBottomColor: colors.border }]}>
       <View style={styles.icon}>
-        <AppText variant="title">{getMenuIcon(item.icon)}</AppText>
+        <MaterialCommunityIcons name={item.icon as never} size={22} color={colors.text} />
       </View>
 
       <View style={styles.text}>
@@ -38,23 +39,10 @@ export function MenuItem({ item }: Props) {
           }}
         />
       ) : (
-        <AppText variant="h3" color={colors.textMuted}>
-          ›
-        </AppText>
+        <MaterialCommunityIcons name="chevron-right" size={24} color={colors.textMuted} />
       )}
     </View>
   );
-}
-
-function getMenuIcon(icon: string) {
-  const icons: Record<string, string> = {
-    download: '⬇',
-    bell: '🔔',
-    'theme-light-dark': '◐',
-    'help-circle': '?',
-  };
-
-  return icons[icon] ?? '•';
 }
 
 const styles = StyleSheet.create({
@@ -66,7 +54,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
   icon: {
-    width: 34,
+    width: 38,
   },
   text: {
     flex: 1,

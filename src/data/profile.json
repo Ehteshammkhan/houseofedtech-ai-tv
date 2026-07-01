@@ -12,13 +12,13 @@
       "id": "downloads",
       "title": "Downloads",
       "subtitle": "Saved lessons for offline access",
-      "icon": "download"
+      "icon": "download-outline"
     },
     {
       "id": "notifications",
       "title": "Notifications",
       "subtitle": "Learning reminders and live alerts",
-      "icon": "bell"
+      "icon": "bell-outline"
     },
     {
       "id": "appearance",
@@ -30,7 +30,7 @@
       "id": "support",
       "title": "Help & Support",
       "subtitle": "FAQs, contact, and product feedback",
-      "icon": "help-circle"
+      "icon": "help-circle-outline"
     }
   ]
 }

@@ -1,8 +1,9 @@
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { StyleSheet, View } from 'react-native';
 
 import { AppText } from '@/components';
 import { useTheme } from '@/hooks';
-import { spacing } from '@/theme';
+import { radius, spacing } from '@/theme';
 
 export function HomeHeader() {
   const { colors } = useTheme();
@@ -16,8 +17,14 @@ export function HomeHeader() {
         <AppText variant="h2">AITV+</AppText>
       </View>
 
-      <View style={[styles.avatar, { backgroundColor: colors.surfaceMuted }]}>
-        <AppText variant="bodyMedium">R</AppText>
+      <View style={styles.actions}>
+        <View style={[styles.iconButton, { backgroundColor: colors.surfaceMuted }]}>
+          <MaterialCommunityIcons name="bell-outline" size={22} color={colors.text} />
+        </View>
+
+        <View style={[styles.iconButton, { backgroundColor: colors.surfaceMuted }]}>
+          <MaterialCommunityIcons name="account-circle-outline" size={24} color={colors.text} />
+        </View>
       </View>
     </View>
   );
@@ -26,15 +33,20 @@ export function HomeHeader() {
 const styles = StyleSheet.create({
   header: {
     paddingHorizontal: spacing.lg,
-    paddingVertical: spacing['4xl'],
+    paddingVertical: spacing.lg,
+    paddingTop: spacing['4xl'],
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  avatar: {
+  actions: {
+    flexDirection: 'row',
+    gap: spacing.sm,
+  },
+  iconButton: {
     width: 42,
     height: 42,
-    borderRadius: 21,
+    borderRadius: radius.full,
     alignItems: 'center',
     justifyContent: 'center',
   },

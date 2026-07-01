@@ -1,3 +1,4 @@
+import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Image } from 'expo-image';
 import { memo } from 'react';
@@ -48,8 +49,17 @@ function HeroCardComponent({ item, onPress }: HeroCardProps) {
         </AppText>
 
         <View style={styles.actions}>
-          <AppButton title="Start Learning" onPress={() => onPress?.(item)} />
-          <AppButton title="Details" variant="secondary" onPress={() => onPress?.(item)} />
+          <AppButton
+            title="Start Learning"
+            onPress={() => onPress?.(item)}
+            leftIcon={<Ionicons name="play" size={18} color="#FFFFFF" />}
+          />
+          <AppButton
+            title="Details"
+            variant="secondary"
+            onPress={() => onPress?.(item)}
+            leftIcon={<Ionicons name="information-circle-outline" size={18} color="#FFFFFF" />}
+          />
         </View>
       </View>
     </Pressable>

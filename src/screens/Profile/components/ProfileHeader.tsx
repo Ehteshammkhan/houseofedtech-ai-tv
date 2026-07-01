@@ -1,3 +1,4 @@
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Image } from 'expo-image';
 import { StyleSheet, View } from 'react-native';
 
@@ -25,6 +26,7 @@ export function ProfileHeader({ profile }: Props) {
         </AppText>
 
         <View style={[styles.planBadge, { backgroundColor: colors.primary }]}>
+          <MaterialCommunityIcons name="star" size={14} color="#FFFFFF" />
           <AppText variant="caption" color="#FFFFFF">
             {profile.plan}
           </AppText>
@@ -56,5 +58,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.xs,
     borderRadius: radius.full,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.xs,
   },
 });

@@ -1,8 +1,9 @@
+import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Text } from 'react-native';
 
-import { ProfileScreen, SearchScreen } from '@/screens';
 import { useTheme } from '@/hooks';
+import { ProfileScreen, SearchScreen } from '@/screens';
+
 import { HomeStack } from './HomeStack';
 import type { RootTabParamList } from './types';
 
@@ -18,11 +19,16 @@ export function BottomTabs() {
         tabBarStyle: {
           backgroundColor: colors.surface,
           borderTopColor: colors.border,
-          height: 64,
+          height: 68,
           paddingTop: 8,
+          paddingBottom: 8,
         },
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.textMuted,
+        tabBarLabelStyle: {
+          fontSize: 12,
+          fontWeight: '600',
+        },
       }}
     >
       <Tab.Screen
@@ -30,7 +36,9 @@ export function BottomTabs() {
         component={HomeStack}
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <Text style={{ color }}>⌂</Text>,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="home-outline" size={size} color={color} />
+          ),
         }}
       />
 
@@ -39,7 +47,9 @@ export function BottomTabs() {
         component={SearchScreen}
         options={{
           title: 'Search',
-          tabBarIcon: ({ color }) => <Text style={{ color }}>⌕</Text>,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="search-outline" size={size} color={color} />
+          ),
         }}
       />
 
@@ -48,7 +58,9 @@ export function BottomTabs() {
         component={ProfileScreen}
         options={{
           title: 'Profile',
-          tabBarIcon: ({ color }) => <Text style={{ color }}>◉</Text>,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="person-outline" size={size} color={color} />
+          ),
         }}
       />
     </Tab.Navigator>

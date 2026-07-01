@@ -1,4 +1,5 @@
-import { StyleSheet, TextInput } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { StyleSheet, TextInput, View } from 'react-native';
 
 import { useTheme } from '@/hooks';
 import { radius, spacing } from '@/theme';
@@ -12,29 +13,40 @@ export function SearchBar({ value, onChangeText }: Props) {
   const { colors } = useTheme();
 
   return (
-    <TextInput
-      value={value}
-      onChangeText={onChangeText}
-      placeholder="Search courses, workshops, topics..."
-      placeholderTextColor={colors.textMuted}
+    <View
       style={[
-        styles.input,
+        styles.container,
         {
           backgroundColor: colors.surface,
-          color: colors.text,
           borderColor: colors.border,
         },
       ]}
-    />
+    >
+      <Ionicons name="search-outline" size={22} color={colors.textMuted} />
+
+      <TextInput
+        value={value}
+        onChangeText={onChangeText}
+        placeholder="Search courses, workshops, topics..."
+        placeholderTextColor={colors.textMuted}
+        style={[styles.input, { color: colors.text }]}
+      />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  input: {
+  container: {
     height: 54,
     borderRadius: radius.xl,
     paddingHorizontal: spacing.lg,
-    fontSize: 15,
     borderWidth: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
+  },
+  input: {
+    flex: 1,
+    fontSize: 15,
   },
 });

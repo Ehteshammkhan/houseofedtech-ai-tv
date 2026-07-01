@@ -1,9 +1,10 @@
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Ionicons } from '@expo/vector-icons';
+import { Pressable, StyleSheet, View } from 'react-native';
 
-import { spacing } from '@/theme';
+import { useTheme } from '@/hooks';
+import { radius, spacing } from '@/theme';
 import type { ContentItem } from '@/types';
 
 import { ActionButtons } from './ActionButtons';
@@ -15,22 +16,31 @@ type Props = {
 };
 
 export function DetailHero({ item, onBack }: Props) {
+  const { colors } = useTheme();
+
   return (
     <View style={styles.hero}>
-      <Image
-        source={{ uri: item.backdrop }}
-        style={StyleSheet.absoluteFillObject}
-        contentFit="cover"
-      />
+      <Image source={{ uri: item.backdrop }} style={StyleSheet.absoluteFill} contentFit="cover" />
 
       <LinearGradient
-        colors={['rgba(0,0,0,0.05)', 'rgba(0,0,0,0.95)']}
-        style={StyleSheet.absoluteFillObject}
+        colors={['rgba(0,0,0,.05)', 'rgba(0,0,0,.95)']}
+        style={StyleSheet.absoluteFill}
       />
 
-      <TouchableOpacity style={styles.backButton} onPress={onBack} activeOpacity={0.8}>
-        <Ionicons name="arrow-back" size={22} color="#FFFFFF" />
-      </TouchableOpacity>
+      <View style={styles.top}>
+        <Pressable
+          onPress={onBack}
+          style={({ pressed }) => [
+            styles.backButton,
+            {
+              backgroundColor: colors.surfaceMuted,
+              opacity: pressed ? 0.8 : 1,
+            },
+          ]}
+        >
+          <Ionicons name="arrow-back" size={22} color={colors.text} />
+        </Pressable>
+      </View>
 
       <View style={styles.bottom}>
         <DetailMetadata item={item} />
@@ -43,26 +53,17 @@ export function DetailHero({ item, onBack }: Props) {
 const styles = StyleSheet.create({
   hero: {
     height: 540,
-    position: 'relative',
   },
-
+  top: {
+    padding: spacing.lg,
+  },
   backButton: {
-    position: 'absolute',
-    top: 56,
-    left: 20,
-
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-
-    justifyContent: 'center',
+    width: 44,
+    height: 44,
+    borderRadius: radius.full,
     alignItems: 'center',
-
-    backgroundColor: 'rgba(0,0,0,0.45)',
-
-    zIndex: 100,
+    justifyContent: 'center',
   },
-
   bottom: {
     flex: 1,
     justifyContent: 'flex-end',

@@ -1,3 +1,4 @@
+import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, View } from 'react-native';
 
 import { useTheme } from '@/hooks';
@@ -24,7 +25,7 @@ export function ErrorState({
   return (
     <View style={styles.container}>
       <View style={[styles.icon, { backgroundColor: colors.surfaceMuted }]}>
-        <AppText variant="h2">!</AppText>
+        <Ionicons name="alert-circle-outline" size={42} color={colors.error} />
       </View>
 
       <AppText variant="h3" style={styles.title}>
