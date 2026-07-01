@@ -1,33 +1,17 @@
-import { StyleSheet, View } from 'react-native';
+import { ErrorState, ScreenContainer } from '@/components';
 
-import { AppText, ScreenContainer } from '@/components';
-import { useTheme } from '@/hooks';
-import { spacing } from '@/theme';
+type HomeErrorProps = {
+  onRetry?: () => void;
+};
 
-export function HomeError() {
-  const { colors } = useTheme();
-
+export function HomeError({ onRetry }: HomeErrorProps) {
   return (
     <ScreenContainer>
-      <View style={styles.center}>
-        <AppText variant="h3">Something went wrong</AppText>
-        <AppText variant="body" color={colors.textMuted} style={styles.message}>
-          Please pull down to retry.
-        </AppText>
-      </View>
+      <ErrorState
+        title="Unable to load AITV+"
+        message="Please check your connection and try again."
+        onRetry={onRetry}
+      />
     </ScreenContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  center: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: spacing.xl,
-  },
-  message: {
-    marginTop: spacing.sm,
-    textAlign: 'center',
-  },
-});

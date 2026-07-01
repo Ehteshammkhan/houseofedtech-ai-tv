@@ -25,7 +25,7 @@ export function HomeScreen() {
   );
 
   if (isLoading) return <HomeLoading />;
-  if (isError || !data) return <HomeError />;
+  if (isError || !data) return <HomeError onRetry={refetch} />;
 
   return (
     <ScreenContainer>

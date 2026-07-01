@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 
-import { AppButton, AppText, DetailSkeleton, ScreenContainer } from '@/components';
+import { AppText, DetailSkeleton, EmptyState, ScreenContainer } from '@/components';
 import { useHome } from '@/hooks';
 import { spacing } from '@/theme';
 import type { HomeStackParamList } from '@/navigation';
@@ -44,15 +44,12 @@ export function DetailScreen() {
   if (!selectedItem) {
     return (
       <ScreenContainer>
-        <View style={styles.center}>
-          <AppText variant="h3">Content not found</AppText>
-
-          <AppButton
-            title="Go Back"
-            onPress={() => navigation.goBack()}
-            style={styles.backButton}
-          />
-        </View>
+        <EmptyState
+          title="Content not found"
+          message="The selected content is no longer available."
+          actionLabel="Go Back"
+          onAction={() => navigation.goBack()}
+        />
       </ScreenContainer>
     );
   }
@@ -87,15 +84,6 @@ const styles = StyleSheet.create({
   },
   description: {
     marginTop: spacing.sm,
-  },
-  center: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: spacing.xl,
-  },
-  backButton: {
-    marginTop: spacing.lg,
   },
   footerSpace: {
     height: spacing['4xl'],
