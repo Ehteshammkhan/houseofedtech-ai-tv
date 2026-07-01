@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: spacing.lg,
     marginBottom: spacing['2xl'],
+    paddingTop: spacing['4xl'],
   },
   avatar: {
     width: 82,

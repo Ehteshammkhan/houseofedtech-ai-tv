@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet, View } from 'react-native';
 
-import { AppText, ScreenContainer } from '@/components';
+import { AppText, ProfileSkeleton, ScreenContainer } from '@/components';
 import { useProfile, useTheme } from '@/hooks';
 import { spacing } from '@/theme';
 
@@ -11,13 +11,7 @@ export function ProfileScreen() {
   const { data, isLoading } = useProfile();
 
   if (isLoading || !data) {
-    return (
-      <ScreenContainer>
-        <View style={styles.center}>
-          <AppText variant="h3">Loading profile...</AppText>
-        </View>
-      </ScreenContainer>
-    );
+    return <ProfileSkeleton />;
   }
 
   return (

@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 
-import { AppButton, AppText, ScreenContainer } from '@/components';
+import { AppButton, AppText, DetailSkeleton, ScreenContainer } from '@/components';
 import { useHome } from '@/hooks';
 import { spacing } from '@/theme';
 import type { HomeStackParamList } from '@/navigation';
@@ -14,7 +14,7 @@ type DetailRouteProp = RouteProp<HomeStackParamList, 'DetailScreen'>;
 export function DetailScreen() {
   const navigation = useNavigation();
   const route = useRoute<DetailRouteProp>();
-  const { data } = useHome();
+  const { data, isLoading } = useHome();
 
   const selectedItem = useMemo(() => {
     if (!data) return undefined;
@@ -37,11 +37,16 @@ export function DetailScreen() {
       .slice(0, 6);
   }, [data, selectedItem]);
 
+  if (isLoading) {
+    return <DetailSkeleton />;
+  }
+
   if (!selectedItem) {
     return (
       <ScreenContainer>
         <View style={styles.center}>
           <AppText variant="h3">Content not found</AppText>
+
           <AppButton
             title="Go Back"
             onPress={() => navigation.goBack()}
@@ -59,6 +64,7 @@ export function DetailScreen() {
 
         <View style={styles.aboutSection}>
           <AppText variant="h3">About this content</AppText>
+
           <AppText variant="body" style={styles.description}>
             {selectedItem.description}
           </AppText>
