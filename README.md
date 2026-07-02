@@ -15,7 +15,7 @@ The application is inspired by modern streaming and content-discovery platforms 
 - Continue Learning Section
 - Live Badge
 - Pull to Refresh
-- Optimized FlashList
+- Optimized FlatList
 
 ---
 
@@ -70,7 +70,7 @@ The application is inspired by modern streaming and content-discovery platforms 
 - Zustand
 - Expo Image
 - Expo Linear Gradient
-- FlashList
+- FlatList
 - React Native Paper
 
 ---
@@ -163,7 +163,7 @@ Managed globally using **Zustand**.
 
 # ⚡ Performance Optimizations
 
-- FlashList
+- FlatList
 - React.memo
 - useMemo
 - useCallback

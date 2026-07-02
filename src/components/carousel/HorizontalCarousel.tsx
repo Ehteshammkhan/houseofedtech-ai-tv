@@ -1,6 +1,5 @@
 import { memo, useCallback } from 'react';
-import { StyleSheet, View } from 'react-native';
-import { FlashList } from '@shopify/flash-list';
+import { FlatList, StyleSheet, View } from 'react-native';
 
 import { ContentCard } from '@/components/cards';
 import { spacing } from '@/theme';
@@ -22,13 +21,17 @@ function HorizontalCarouselComponent({ section, onPressItem }: HorizontalCarouse
     <View style={styles.container}>
       <CarouselHeader title={section.title} subtitle={section.subtitle} />
 
-      <FlashList
+      <FlatList
         data={section.items}
         horizontal
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.listContent}
+        initialNumToRender={4}
+        maxToRenderPerBatch={4}
+        windowSize={5}
+        removeClippedSubviews
       />
     </View>
   );
