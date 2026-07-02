@@ -265,13 +265,21 @@ eas build --platform android
 
 # 📸 Screenshots
 
-_Add application screenshots here._
+| Home                                  | Detail                                    |
+| ------------------------------------- | ----------------------------------------- |
+| ![Home](assets/screenshots/home.jpeg) | ![Detail](assets/screenshots/detail.jpeg) |
+
+| Search                                    | Profile                                     |
+| ----------------------------------------- | ------------------------------------------- |
+| ![Search](assets/screenshots/search.jpeg) | ![Profile](assets/screenshots/profile.jpeg) |
 
 ---
 
 # 🎥 Demo Video
 
-_Add screen recording link here._
+▶ **Application Demo (2 Minutes)**
+
+https://drive.google.com/file/d/1404bBwkJXIWMLNr6r0hc31EqByZ7oX2t/view?usp=sharing
 
 ---
 
